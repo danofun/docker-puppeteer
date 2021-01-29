@@ -13,7 +13,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install puppeteer so it's available in the container.
-RUN npm i puppeteer pdf-merge dotenv nodemailer \
+RUN npm i puppeteer pdf-merge dotenv nodemailer tedious \
     # Add user so we don't need --no-sandbox.
     # same layer as npm install to keep re-chowned files from using up several hundred MBs more space
     && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
